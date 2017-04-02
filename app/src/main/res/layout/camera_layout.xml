@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Camera.CameraActivity"
+    >
+
+    <FrameLayout
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <ru.tander.camerarc.Camera.DrawingView
+        android:id="@+id/drawing_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ru.tander.camerarc.Camera.DrawingView>
+
+    <ImageButton
+        android:id="@+id/cam_menu_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_menu_black_24dp"
+        />
+
+    <ScrollView
+        android:id="@+id/popup_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/cam_menu_button"
+        android:layout_below="@+id/cam_menu_button"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        >
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/capture_photo_button"
+            android:src="@drawable/ic_featured_video_white_18dp"
+            android:layout_margin="10dp"
+            app:fabSize="normal"
+            />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/capture_video_button"
+            android:src="@drawable/ic_fiber_manual_record_white_18dp"
+            app:fabSize="normal"
+            android:layout_margin="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/video_recording_title"
+            android:textColor="@color/red"
+            android:layout_margin="10dp"
+            android:text="Идет запись..."
+            android:visibility="gone"
+            android:width="70dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
